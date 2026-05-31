@@ -1,19 +1,19 @@
 :root {
-  --bg-primary: #080c14;
-  --bg-card: rgba(15, 23, 42, 0.65);
-  --border-card: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(56, 189, 248, 0.4);
+  --bg-primary: #000000;
+  --bg-card: rgba(10, 10, 10, 0.4);
+  --border-card: #222222;
+  --border-glow: #ffffff;
   
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-accent: #38bdf8;
-  --text-accent-purple: #c084fc;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --text-accent: #ffffff;
+  --text-accent-purple: #ffffff;
   
-  --btn-primary: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-  --btn-hover: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #a855f7 100%);
+  --btn-primary: #ffffff;
+  --btn-hover: #e5e5e5;
   
-  --shadow-neon: 0 0 25px rgba(56, 189, 248, 0.15);
-  --shadow-neon-hover: 0 0 35px rgba(99, 102, 241, 0.3);
+  --shadow-neon: none;
+  --shadow-neon-hover: none;
 }
 
 * {
@@ -32,48 +32,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Floating background glow blobs to wow the user */
-body::before, body::after {
-  content: '';
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  filter: blur(120px);
-  z-index: 0;
-  opacity: 0.45;
-  pointer-events: none;
-}
-
-body::before {
-  background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
-  top: -10%;
-  left: -10%;
-  animation: float-slow-1 25s ease-in-out infinite alternate;
-}
-
-body::after {
-  background: radial-gradient(circle, #a855f7 0%, transparent 70%);
-  bottom: -10%;
-  right: -10%;
-  animation: float-slow-2 25s ease-in-out infinite alternate;
-}
-
-@keyframes float-slow-1 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(80px, 50px) scale(1.2); }
-}
-
-@keyframes float-slow-2 {
-  0% { transform: translate(0, 0) scale(1.2); }
-  100% { transform: translate(-80px, -50px) scale(0.9); }
 }
 
 /* Base Headings */
 h1, h2, h3, h4 {
   font-family: 'Outfit', sans-serif;
 }
+
