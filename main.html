@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Predict Your Next Day</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Predict Your Next Day</h2>
+
+    <select id="daySelect">
+        <option value="" disabled selected hidden id="placeholderOption">Select today's day</option>
+        <option value="monday">Monday</option>
+        <option value="tuesday">Tuesday</option>
+        <option value="wednesday">Wednesday</option>
+        <option value="thursday">Thursday</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday</option>
+        <option value="sunday">Sunday</option>
+    </select>
+
+    <button onclick="predictNextDay()">Predict Next Day</button>
+
+    <div id="loadingText"></div>
+    <div class="loader" id="loader"></div>
+
+    <div class="progress" id="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div id="result"></div>
+</div>
+
+
+<script>
+const funnyTexts = [
+    "Calibrating Quantum Engine...",
+    "Contacting Future Datacenter...",
+    "Uploading your brain to cloud...",
+    "AI is thinking very hard...",
+    "Seeing zomato for discounts...",
+    "Aligning days with universe..."
+];
+
+const nextDayMap = {
+    monday: "Tuesday",
+    tuesday: "Wednesday",
+    wednesday: "Thursday",
+    thursday: "Friday",
+    friday: "Saturday",
+    saturday: "Sunday",
+    sunday: "Monday"
+};
+
+function predictNextDay() {
+    let select = document.getElementById("daySelect");
+    let day = select.value;
+    let placeholder = document.getElementById("placeholderOption");
+
+    //  If no day selected
+    if (day === "") {
+        // change the placeholder text + make it red using inline style
+        placeholder.textContent = "Please select today's day";
+        placeholder.style.color = "red";
+        placeholder.style.fontWeight = "bold";
+
+        // make sure placeholder stays selected
+        select.selectedIndex = 0;
+        return; // stop here, don't start loader
+    } else {
+        // reset placeholder back to normal when user selects something
+        placeholder.textContent = "Select today's day";
+        placeholder.style.color = "";       // remove inline style
+        placeholder.style.fontWeight = "";
+    }
+
+    let loader = document.getElementById("loader");
+    let text = document.getElementById("loadingText");
+    let result = document.getElementById("result");
+    let progress = document.getElementById("progress");
+    let bar = document.getElementById("progressBar");
+
+
+    result.style.display = "none";
+    bar.style.width = "0%";
+    progress.style.display = "block";
+    loader.style.display = "block";
+    let count = 0;
+
+    let loadingInterval = setInterval(() => {
+        if (count < funnyTexts.length) {
+            text.innerHTML = funnyTexts[count];
+            bar.style.width = ((count + 1) / funnyTexts.length) * 100 + "%";
+            count++;
+        } else {
+            clearInterval(loadingInterval);
+            loader.style.display = "none";
+            text.innerHTML = "";
+            result.innerHTML = "Tomorrow is: " + nextDayMap[day];
+            result.style.display = "block";
+        }
+    }, 1200);
+}
+</script>
+
+</body>
+</html>
