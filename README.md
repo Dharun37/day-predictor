@@ -1,6 +1,7 @@
 # NEXT DAY PREDICTOR (NDP-v1.0)
 > *The world's most advanced, high-performance, over-engineered temporal projection engine that mathematically determines what day tomorrow is.*
 
+
 [![Build Status](https://img.shields.io/badge/Build-Over--engineered-success?style=for-the-badge&logo=rocket)](https://github.com/Dharun37/day-predictor)
 [![Accuracy Status](https://img.shields.io/badge/Accuracy-100%25-brightgreen?style=for-the-badge&logo=target)](https://github.com/Dharun37/day-predictor)
 [![Quantum Ready](https://img.shields.io/badge/Quantum%20Ready-99.9%25-blueviolet?style=for-the-badge&logo=cpu)](https://github.com/Dharun37/day-predictor)
