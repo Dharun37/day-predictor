@@ -258,3 +258,194 @@ button.predict-btn:disabled {
   overflow: hidden;
 }
 
+/* Dynamic CSS Skeleton & Eco Mode Fallbacks */
+.light-pillar-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(82, 39, 255, 0.12) 0%, rgba(255, 159, 252, 0.04) 50%, transparent 80%);
+  animation: pulse-glow-eco 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow-eco {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* Floating Ultra-Premium Performance HUD Dashboard */
+.performance-hud {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  width: 290px;
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+.performance-hud:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 48px rgba(82, 39, 255, 0.15);
+}
+
+.hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.hud-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-indicator-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-indicator 2s infinite alternate;
+}
+
+@keyframes pulse-indicator {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.hud-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hud-fps {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hud-fps.fps-high {
+  color: #10b981;
+}
+
+.hud-fps.fps-low {
+  color: #ef4444;
+}
+
+.hud-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hud-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.status-label {
+  color: var(--text-secondary);
+}
+
+.status-val {
+  font-weight: 600;
+}
+
+.text-high {
+  color: #10b981;
+}
+
+.text-medium {
+  color: #38bdf8;
+}
+
+.text-low {
+  color: #fb923c;
+}
+
+.text-eco {
+  color: #a855f7;
+}
+
+.hud-controls {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+}
+
+.hud-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 6px 0;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.hud-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.hud-btn.active {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: #000000;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.hud-btn.eco-btn.active {
+  background: #a855f7;
+  border-color: #a855f7;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.hud-btn.eco-btn:hover:not(.active) {
+  color: #c084fc;
+}
+
+/* Responsiveness for HUD */
+@media (max-width: 600px) {
+  .performance-hud {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+  }
+}
+
